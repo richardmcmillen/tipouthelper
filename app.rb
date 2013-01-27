@@ -13,7 +13,7 @@ post '/calculator' do
     session_start!
     session[:tipsfor] = Hash.new
     for name in params[:names].split(",")
-      session[:tipsfor][name] = []
+      session[:tipsfor][name.downcase] = []
     end
   end
   if params[:amount] and params[:employee]

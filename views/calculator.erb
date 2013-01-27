@@ -3,7 +3,7 @@
 <p>
 <% if session[:tipsfor] %>
     <% session[:tipsfor].each_key do |name| %>
-        <label><input type="checkbox" name="employee[<%= name.downcase %>]" /><%= name.capitalize %></label>
+        <label><input type="checkbox" name="employee[<%= name %>]" /><%= name.capitalize %></label>
     <% end %>
 <% end %>
 </p>
