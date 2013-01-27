@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Dubh Linn Gate Tip Calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="/css/normalize.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+    <body>
+        <h1>Dubh Linn Gate Tip Calculator</h1>
+        <p>Enter names of all workers with a comma inbetween, eg. ricky,cian,dave</p>
+        <form action="/" method="post">
+            <input type="text" name="names" placeholder="eg. ricky,cian,dave">
+            <input type="submit" value="Submit">
+        </form>
+        <p>
+        <% for name in @names %>
+            <%= name %> - &#36;<br>
+        <% end %>
+        </p>
+    </body>
+</html>
