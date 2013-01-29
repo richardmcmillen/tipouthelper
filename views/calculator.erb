@@ -1,16 +1,16 @@
 <form action="/calculator" method="post">
   <input type="text" name="amount" placeholder="service charge amount">
-<p>
-<% if session[:tipsfor] %>
-    <% session[:tipsfor].each_key do |name| %>
-        <label><input type="checkbox" name="employee[<%= name %>]" /><%= name.capitalize %></label>
-    <% end %>
-<% end %>
-</p>
-<input type="submit" value="Submit" data-theme="b">
+  <p>
+  <% if session[:tipsfor] %>
+      <% session[:tipsfor].each_key do |name| %>
+          <label><input type="checkbox" name="employee[<%= name %>]" /><%= name.capitalize %></label>
+      <% end %>
+  <% end %>
+  </p>
+  <input type="submit" value="Submit" data-theme="b">
 </form>
 <ul data-role="listview" data-inset="true" data-theme="a">
-  <li data-role="list-divider">Total Tips</li>
+  <li data-role="list-divider">Running Totals</li>
 <% if session[:tipsfor] %>
     <% session[:tipsfor].each do |name, tips| %>
         <li><%= name.capitalize %> - &#36;<%= tips.inject(:+).round(2) unless tips.empty? %></li>
