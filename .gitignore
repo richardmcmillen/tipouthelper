@@ -3,3 +3,5 @@
 
 /pkg
 /doc/api
+.bundle
+bin
