@@ -4,7 +4,7 @@ if [ "${RAILS_ENV}" != "" ]; then
     echo "WARNING: RAILS_ENV was set to '${RAILS_ENV}'. Unsetting..."
     export RAILS_ENV=""
 fi
-rvm --create use 2.0.0@tipouthelper
+rvm --create use 2.7.1@tipouthelper
 hash -r
 which bundle > /dev/null
 if [ $? -ne 0 ]; then
